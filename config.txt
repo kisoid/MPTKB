@@ -1,0 +1,9 @@
+﻿# полный путь к выходному файлу в формате GML (Graph Modeling Language)
+# используется в GML_Generator.ps1
+
+# $out_gml = 'T:\!!!_PowerShell_scripts\MyWiki\out_IT.gml'
+
+# полный путь к исполняемому файлу Git
+# используется в mptkb.ps1 (опционально)
+
+$path2git = 'C:\PortableGit\cmd\git.exe'
