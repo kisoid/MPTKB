@@ -323,17 +323,24 @@ $RecentButton_OnClick=
 {
     $rcnt_ts = (get-date).AddHours(-48)
     [void][Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic')
-    $request = [Microsoft.VisualBasic.Interaction]::InputBox("Введите временную отметку", "Недавние", $rcnt_ts.ToString("yyyy-MM-dd HH:mm"))
-    $rcnt_ts = [datetime]::parseexact($request, "yyyy-MM-dd HH:mm", $null)
+    $request = [Microsoft.VisualBasic.Interaction]::InputBox("Введите временную отметку", "Недавние", $rcnt_ts.ToString("yyyy-MM-dd"))
+    $rcnt_ts = [datetime]::parseexact($request, "yyyy-MM-dd", $null)
     #Write-Host $rcnt_ts
 
-    $rcnt_nodes = (Get-ChildItem -LiteralPath $script:workdirectory -Recurse '*.dcmp2' | Where-Object {$_.LastWriteTime -ge $rcnt_ts} | Sort-Object -Property LastWriteTime -Descending).BaseName
-    
-    $treeView1.Nodes.Clear()
+    $rcnt_nodes = ($script:note_title.GetEnumerator() | Where-Object {$script:note_timestamp[$_.Name] -ge $rcnt_ts} | Sort-Object -Property @{Expression={$script:note_timestamp[$_.Name]}} -Descending).Value
 
-    foreach($rcnt_node in $rcnt_nodes)
+    if($rcnt_nodes.Count -gt 0)
     {
-        Add-Node $treeView1 $rcnt_node | Out-Null
+        $treeView1.Nodes.Clear()
+
+        foreach($rcnt_node in $rcnt_nodes)
+        {
+            Add-Node $treeView1 $rcnt_node | Out-Null
+        }
+    }
+    else
+    {
+        Write-Host 'Нет недавних заметок за этот период'
     }
 }
 
@@ -969,7 +976,7 @@ $richTextBox1.TabIndex = 4
 $richTextBox1.Text = ""
 $richTextBox1.add_TextChanged($RTFChanged)
 
-$richTextBox1.Font = New-Object System.Drawing.Font("Lucida Console",10,[System.Drawing.FontStyle]::Regular)
+$richTextBox1.Font = New-Object System.Drawing.Font("Tahoma",10,[System.Drawing.FontStyle]::Regular)
 
 $form1.Controls.Add($richTextBox1)
 
