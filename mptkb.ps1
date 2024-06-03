@@ -226,7 +226,7 @@ function Review-Next
 
     Write-Host "Конкуренция: $($results.Count)"
 
-    $selected_link = ($results.GetEnumerator() | Sort-Object -Property Prio | Select-Object -First 20 | Get-Random).NodeId
+    $selected_link = ($results.GetEnumerator() | Sort-Object -Property @{Expression={$_.Prio}; Descending=$false}, @{Expression={$_.NodeId} ;Descending=$true} | Select-Object -First 20 | Get-Random).NodeId
     
     $script:antibonus[$selected_link]++
     $script:review_ts[$selected_link] = (Get-Date)
