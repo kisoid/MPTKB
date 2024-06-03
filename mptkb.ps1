@@ -193,45 +193,29 @@ function Review-Next
 {
     $results = New-Object System.Collections.Generic.List[System.Object]
 
-    $nodes = Get-ChildItem -LiteralPath $script:workdirectory -Recurse '*.dcmp2'
-
-    $tmp_richTextBox = New-Object System.Windows.Forms.RichTextBox
-
-    foreach($node in $nodes)
+    for($node=1; $node -le $script:last_oid; $node++)
     {
-        $tmp_richTextBox.LoadFile($node.FullName)
-        $matchstrings = ($tmp_richTextBox.Lines | Where-Object {$_ -like '#review:*'})
-
-        $cand_ts = $node.LastWriteTime
-
-        foreach($mstr in $matchstrings)
+        if(-not $script:review_ts.ContainsKey($node))
         {
-            $tmp_arr = $mstr.Split(':')
-            $tmp_arr = ($tmp_arr[1]).Split(' ')
-            $cand_rev = [int]($tmp_arr[0])
-
-            if(-not $script:review_ts.ContainsKey($node.BaseName))
-            {
-                $script:review_ts[$node.BaseName] = $cand_ts
-            }
-
-            if(((Get-Date) - $cand_ts).TotalDays -lt $cand_rev)
-            {
-                continue
-            }
-
-            if(((Get-Date) - $script:review_ts[$node.BaseName]).TotalMinutes -lt $script:antibonus[$node.BaseName]*10*$cand_rev)
-            {
-                continue
-            }
-            
-            $results.Add([pscustomobject]@{
-                'NodeName' = $node.BaseName
-                'Prio' = $cand_rev
-                'Updated' = $cand_ts
-                'rev_ts' = $script:review_ts[$node.BaseName]
-            })
+            $script:review_ts[$node] = $script:note_timestamp[$node]
         }
+
+        if(((Get-Date) - $script:note_timestamp[$node]).TotalDays -lt $script:note_review[$node])
+        {
+            continue
+        }
+
+        if(((Get-Date) - $script:review_ts[$node]).TotalMinutes -lt $script:antibonus[$node]*10*$script:note_review[$node])
+        {
+            continue
+        }
+
+        $results.Add([pscustomobject]@{
+            'NodeId' = $node
+            'Prio' = $script:note_review[$node]
+            'Updated' = $script:note_timestamp[$node]
+            'rev_ts' = $script:review_ts[$node]
+            })
     }
 
     if($results.Count -eq 0)
@@ -242,15 +226,13 @@ function Review-Next
 
     Write-Host "Конкуренция: $($results.Count)"
 
-    ### $selected_link = ($results.GetEnumerator() | Sort-Object -Property Updated | Out-GridView -OutputMode Single).NodeName
-    $selected_link = ($results.GetEnumerator() | Sort-Object -Property Prio | Select-Object -First 20 | Get-Random).NodeName
+    $selected_link = ($results.GetEnumerator() | Sort-Object -Property Prio | Select-Object -First 20 | Get-Random).NodeId
     
     $script:antibonus[$selected_link]++
     $script:review_ts[$selected_link] = (Get-Date)
 
-    $target = "$($script:workdirectory)\$($selected_link).dcmp2"
-    Write-Host "Go for review $target"
-    GoToPage $target
+    Write-Host "Go for review" $script:note_title[$selected_link]
+    GoToPage $selected_link
 
     ## debug
     # $results.GetEnumerator() | Out-GridView
@@ -446,8 +428,8 @@ $ConsistencyCheckerButton_OnClick=
                 'oid' = $i
                 'Name' = $script:note_title[$i]
                 'Links' = $neibs[$i].Count
-                'Timestamp' = $script:note_timestamp[$i]
-                'Review timestamp' = $script:review_ts[$i]
+                'Timestamp' = ($script:note_timestamp[$i]).ToString("yyyy-MM-dd HH:mm:ss")
+                'Review timestamp' = (&{if($script:review_ts[$i]) {($script:review_ts[$i]).ToString("yyyy-MM-dd HH:mm:ss")} else {''}}) #https://stackoverflow.com/questions/25682507/powershell-inline-if-iif
                 'Priority' = $script:note_review[$i]
                 'Problem' = $problem[$i]
                 })
