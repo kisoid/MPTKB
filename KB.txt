@@ -1262,8 +1262,6 @@ title:netsh portproxy
 
 timestamp:2021-11-27
 
-netsh portproxy
-
 https://interface31.ru/tech_it/2016/02/nastraivaem-probros-portov-v-windows-pri-pomoshhi-komandnoy-stroki-i-portproxy.html
 Единственное ограничение - portproxy может работать только с протоколом TCP
 
@@ -1278,6 +1276,7 @@ linkto:Настройка OpenVPN client-to-site TUN+Routing на FreeBSD с PKI
 
 На эту страницу ссылается - linkto:Переходные механизмы IPv4 в IPv6
 На эту страницу ссылается - linkto:SSH-туннелирование (проброс портов)
+На эту страницу ссылается - linkto:Обеспечение опосредованного сетевого взаимодействия (проксирование и туннелирование трафика)
 
 ----- end note
 
@@ -1285,7 +1284,7 @@ linkto:Настройка OpenVPN client-to-site TUN+Routing на FreeBSD с PKI
 
 
 
-checksum:AA5C4AEED22CE63A63EB2828E8D5A3A66E3F79F4E8CCFA469331176369D24DD5
+checksum:0021807EE9015236D75319CB25F859BF559ECA0E13B7D4BA8F8FA6483581E480
 
 
 
@@ -3986,9 +3985,6 @@ title:tun2socks
 
 timestamp:2021-11-29
 
-tun2socks
-#софт
-
 Можно создать TUN-адаптер, работающий поверх socks
 Например, пустить поверх TOR
 Затем сделать бридж этого TUN (*бридж с TUN не получится - надо значит с TAP) с сетевухой виртуалки какой-нибудь
@@ -4000,8 +3996,8 @@ tun2socks
 https://habr.com/ru/company/itsoft/blog/584162/
 https://github.com/xjasonlyu/tun2socks/
 
-Назад - linkto#Клиентский софт
 На эту страницу ссылается - linkto:TUN-адаптер
+На эту страницу ссылается - linkto:Протокол SOCKS
 
 ----- end note
 
@@ -4009,7 +4005,7 @@ https://github.com/xjasonlyu/tun2socks/
 
 
 
-checksum:4CB17DC94C1A5486EC4AA349FD712600772630D254F556CBB414802A87EFEE3B
+checksum:239FAF3E0F93EA5F19FCF58CA5C98BA7E28A5C0457A3F95FEADFAB2C7F631E00
 
 
 
@@ -5923,14 +5919,10 @@ title:TOR
 
 timestamp:2021-12-02
 
-TOR
-
 linkto:Ретранслятор типа мост (tor bridges)
 linkto:Луковая маршрутизация (Onion routing)
 
 Назад - linkto:Сетевые протоколы
-На эту страницу ссылается - linkto:Обход блокировок
-
 
 ----- end note
 
@@ -5938,7 +5930,7 @@ linkto:Луковая маршрутизация (Onion routing)
 
 
 
-checksum:B8A20408895C72896CD4A9197B93167504FAC6F0DDF25E5ACB14BE89E7D99269
+checksum:80CC08EC6E3D32F159F4DF93E5D438B562C43FA9CF9CAFE88059C76A7DAAB329
 
 
 
@@ -18815,8 +18807,6 @@ title:VPN
 
 timestamp:2022-02-20
 
-VPN
-
 отличие VPN от SSH, SSL и т.д. - туннелеобразование (виртуальный фейс)
 шифрование опционально: напр, MPLS, чистый GRE не шифруется
 
@@ -18834,6 +18824,7 @@ SSTP (Secure Socket Tunneling Protocol)
 
 На эту страницу ссылается - linkto:IINS v2 (Карманов)
 На эту страницу ссылается - linkto:Оверлейная сеть
+На эту страницу ссылается - linkto:Обеспечение опосредованного сетевого взаимодействия (проксирование и туннелирование трафика)
 
 ----- end note
 
@@ -18841,7 +18832,7 @@ SSTP (Secure Socket Tunneling Protocol)
 
 
 
-checksum:0CEDC9A08256214428B80D1445F89D1C89301BFDA3360E182649F1ADB9E94E93
+checksum:ABED412933BF2094D3136B24BF9D345A6E50CFEB3F6862DB60A3E2D5AC4AFADD
 
 
 
@@ -25995,8 +25986,6 @@ title:Переходные механизмы IPv4 в IPv6
 
 timestamp:2022-07-23
 
-Переходные механизмы IPv4 в IPv6
-
 не взлетели
 слишком сложные/замороченные
 слишком много вариантов
@@ -26018,44 +26007,15 @@ linkto:netsh portproxy
 v4tov6
 v6tov4
 
-linkto:Обход блокировок
-
 Назад - linkto:IPv6
 
-
-
 ----- end note
 
 
 
 
 
-checksum:89A728581B35C2D19629FE5BB3AF5A3ACED20FA052D5DCC164735A319C71E0AD
-
-
-
-
-
------ begin note
-
-title:Обход блокировок
-
-timestamp:2022-07-23
-
-Обход блокировок
-
-Основной текст
-
-Назад - linkto:Переходные механизмы IPv4 в IPv6
-linkto:TOR
-
------ end note
-
-
-
-
-
-checksum:9E0864F47D1EADB332ED5B1935885906740CEAE3D9EC183331F90EAFF1188E68
+checksum:DC093A84DE20CB2C5816726484EACD18F0A7F538CC872501AEA9EB930D2B70F1
 
 
 
@@ -47323,14 +47283,33 @@ checksum:1666CC7EEE882C554995450DD0D45264DD69777365DF1FAB80B31CB28541F34B
 
 title:SSH-туннелирование (проброс портов)
 
-timestamp:2023-06-11
-
-SSH-туннелирование (проброс портов)
-#todo
+timestamp:2024-08-11
 
 https://putty.org.ru/articles/putty-ssh-tunnels.html
+https://www.opennet.ru/tips/info/1691.shtml
+
+~~~
+статический проброс:
+
+прямой проброс (локальный на удалённый):
+ssh -f -N remoteuser@remoteserver -L 8080:192.168.1.1:80
+ssh -f -N remoteuser@remoteserver -L 11111:127.0.0.1:11111
+
+-f - уйти в бэкграунд после установления соединения
+
+обратный проброс (порт 12345 на ssh-сервере на порт 11111 локальной машины):
+ssh -f -N remoteuser@remoteserver -R 12345:localhost:11111
+
+~~~
+цепочка пробросов:
+#todo
+
+~~~
+linkto:Динамический проброс портов с помощью SSH (эмуляция SOCKS-прокси)
 
 Назад - linkto:SSH (Secure Shell)
+linkto:Обеспечение опосредованного сетевого взаимодействия (проксирование и туннелирование трафика)
+
 linkto:netsh portproxy
 
 ----- end note
@@ -47339,7 +47318,7 @@ linkto:netsh portproxy
 
 
 
-checksum:2851584A0F244AAE1590BF5A2EFAF5167E4C360F293A3E8A19B85E74DF9C71BE
+checksum:59A69E31EA7C502FE09F5A159BCAFF77998494B1DA05CC0678004ADC075DC229
 
 
 
@@ -68962,7 +68941,7 @@ checksum:032BBB68D8551B9BF23A41CFABA0C04ED8E70B02BE7354D1EA7BE7318129AE52
 ----- begin note
 
 title:Dockerfile
-#review:1
+#review:2
 
 timestamp:2024-06-11
 
@@ -68987,7 +68966,7 @@ linkto:Слои образа Docker
 
 
 
-checksum:45C1811A5A7A14B6D396E305112762E23FBDE45905E409AAE1422781EB2C7561
+checksum:A2494A495653454DEF5509A530BC2CCB06E9DADFA75B5258B5AE3A500C19BE9A
 
 
 
@@ -69047,7 +69026,7 @@ checksum:F458E47C064922FF96E078C608F16B0EAFD20EE23D34D512A0C06A736E0B1599
 ----- begin note
 
 title:Ядро Linux и контейнеры Docker
-#review:1
+#review:2
 
 timestamp:2024-06-11
 
@@ -69086,7 +69065,7 @@ https://stackoverflow.com/questions/45177473/docker-container-does-not-need-an-o
 
 
 
-checksum:942DC27665045F683A9D85C36B356F90A5CDF99B36AD05E166D086FAD0B7EF8F
+checksum:0BF8EBFE93199C6D786E776EBD954159FD8929009CFD066271FE790C9D6834F8
 
 
 
@@ -69120,7 +69099,7 @@ checksum:C6C35AE33321F56EB0CCC4B56F1F2D1292D0526D495E21AD4EDC875AF2D652A2
 ----- begin note
 
 title:FROM scratch (Dockerfile)
-#review:1
+#review:2
 
 timestamp:2024-06-11
 
@@ -69180,7 +69159,7 @@ https://docs.docker.com/build/building/base-images/
 
 
 
-checksum:7EC303F5A16B1F675370CCE6B2CD3D031C98368E004DE6FC8165A841E4321421
+checksum:6554B421B664EAD771EBB76CBFC4B1F310753E57125C7937784B7E619A551A75
 
 
 
@@ -69218,7 +69197,7 @@ checksum:DEC3255F6369DB991462AA853D708116DFE27F10B1BE47D035FDA08ADB90880A
 ----- begin note
 
 title:Конфигурационный файл openssl.cnf
-#review:1
+#review:2
 
 timestamp:2024-06-11
 
@@ -69250,7 +69229,7 @@ linkto:AD CS
 
 
 
-checksum:EB3780404527977387F59DF676B7B2C4A7B2892017DEBE862AC55378B0E102C1
+checksum:584288A9471F2437A47C91B6B4CE70A8EBB65A88F22C39A01D3F2607282D9443
 
 
 
@@ -69259,7 +69238,7 @@ checksum:EB3780404527977387F59DF676B7B2C4A7B2892017DEBE862AC55378B0E102C1
 ----- begin note
 
 title:Хранение данных в Docker
-#review:1
+#review:2
 
 timestamp:2024-06-15
 
@@ -69275,7 +69254,7 @@ linkto:Хранение информации в контейнерах Docker
 
 
 
-checksum:FFDA42051B87513FACA24C11F590691B16A6640BDE141F652F3048AFDBEDB7EC
+checksum:7DCE60736A983DA561F61E118622E0EBC8063F9B35D5957C875B68AC7935CCF6
 
 
 
@@ -69312,7 +69291,7 @@ checksum:AC1BA7D8F16A1ED99CAD58D3C29CA20CE0B882EC508F20C053785FA8C9D986AB
 ----- begin note
 
 title:Хранение информации в контейнерах Docker
-#review:1
+#review:2
 
 timestamp:2024-06-15
 
@@ -69338,7 +69317,7 @@ linkto:Контейнер Docker
 
 
 
-checksum:F7EFA941405F99D119EAAC781AD02DA7749C180B92558190D2212100C06DB49E
+checksum:A5AFE0AE89A2481D89E17296DADB9AB76C965DFB1F52B313BFDB43BC9889DEBA
 
 
 
@@ -69744,7 +69723,7 @@ checksum:CAF8DD73FB0489A294C59BBE856CDA3A7B2BEF7A7D5DA7DEDB2D28F77BE11CFF
 ----- begin note
 
 title:Пакеты расширений XPI (Mozilla Cross-Platform Install)
-#review:1
+#review:5
 
 timestamp:2024-06-22
 
@@ -69767,7 +69746,7 @@ manifest.json - файл метаданных аддона (версия, раз
 
 
 
-checksum:CFA1007C5118F755F07E707DBF22BB657DC00CF6084058582B96B5B37F048750
+checksum:F0993281A0B217FC32BFD3410BF4AC65B9EC0E2DB1703333F23B4EAD73F43113
 
 
 
@@ -69813,7 +69792,7 @@ checksum:7121BD856C82A3F5515CD966B952CB1C5E20BCD6E61503DF84D10B45BB38490D
 ----- begin note
 
 title:Утилита wmic (Windows)
-#review:1
+#review:5
 
 timestamp:2024-06-22
 
@@ -69828,7 +69807,7 @@ linkto:WMI (Windows Management Instrumentation)
 
 
 
-checksum:F02163B85F88026D9579999C4FAC147951AA6207D545DD3DCC4BA218727D24FF
+checksum:3317EDA1DA8B57462A1E281104EE00B41EA1709C1C4678A63F0843CBE64D4D34
 
 
 
@@ -69837,7 +69816,7 @@ checksum:F02163B85F88026D9579999C4FAC147951AA6207D545DD3DCC4BA218727D24FF
 ----- begin note
 
 title:COW (copy-on-write)
-#review:1
+#review:2
 
 timestamp:2024-06-22
 
@@ -69856,7 +69835,7 @@ linkto:Многоверсионность в PostgreSQL
 
 
 
-checksum:376D8A67DD609BBC67888134599146E93B9663D5C77137800D1E7EDAAA70FF9C
+checksum:EB1EA76FBE92E04315FAF90C2D42F06F9DC55E54F20B6AA572E2B13D33108C5A
 
 
 
@@ -69975,7 +69954,7 @@ checksum:40BDB8E24C557028F6734A5321B5B03FABC6E1782EC91FB6E987373A5ECD5A54
 ----- begin note
 
 title:Redirect-on-write (RoW)
-#review:1
+#review:2
 
 timestamp:2024-07-05
 
@@ -69990,7 +69969,7 @@ linkto:COW (copy-on-write)
 
 
 
-checksum:BA77C9EF44E9B1AB97C7E615FF170B1398B7F82BFFA6766915D00F55180E6A9C
+checksum:3458783B29EDEC63B0779A84BA2FAB5B4CFABF6CB8A2903C045F338C15CD0EC7
 
 
 
@@ -70143,7 +70122,7 @@ title:/dev/mapper
 
 timestamp:2024-07-06
 
-Основной текст
+https://docs.redhat.com/en/documentation/Red_Hat_Enterprise_Linux/6/html/logical_volume_manager_administration/device_mapper
 
 Назад - linkto:"Точки восстановления" перед установкой обновлений с помощью снепшотов LVM
 
@@ -70153,7 +70132,7 @@ timestamp:2024-07-06
 
 
 
-checksum:C865C09807D4755758D0D8E4A0A99BB3D3ED3B06D8DEB51757ED1DD89E8C182E
+checksum:6A484F3739960192238716BD43974817C5BAE9B8BF9DF6335634E2E5EEFA2F19
 
 
 
@@ -70222,6 +70201,100 @@ http://xgu.ru/wiki/man:brctl
 
 
 checksum:0EB5AB1A4BF0FE42DDC21072AA38363CE1023AC97F86687B6BDEDFAAD29A8C64
+
+
+
+
+
+----- begin note
+
+title:Обеспечение опосредованного сетевого взаимодействия (проксирование и туннелирование трафика)
+#review:1
+
+timestamp:2024-08-11
+
+linkto:SSH-туннелирование (проброс портов)
+linkto:netsh portproxy
+linkto:VPN
+linkto:Протокол SOCKS
+linkto#stunnel (SSL/TLS туннелирование)
+linkto#ICMP-туннелирование
+linkto#DNS-туннелирование
+
+----- end note
+
+
+
+
+
+checksum:7657C935201EBE4322448566E3AA7DD245B6CE29EFF86B59A427E2C7AA870A33
+
+
+
+
+
+----- begin note
+
+title:Протокол SOCKS
+#review:1
+
+timestamp:2024-08-11
+
+linkto:tun2socks
+linkto:Динамический проброс портов с помощью SSH (эмуляция SOCKS-прокси)
+
+Назад - linkto:Обеспечение опосредованного сетевого взаимодействия (проксирование и туннелирование трафика)
+
+----- end note
+
+
+
+
+
+checksum:B6972A395A87B1BE4B64943BE582E1D090FFA39B0898C9AD453F6B1BFF2E6ACA
+
+
+
+
+
+----- begin note
+
+title:Динамический проброс портов с помощью SSH (эмуляция SOCKS-прокси)
+#review:1
+
+timestamp:2024-08-11
+
+в отличие от статического проброса, когда конкретный локальный порт связывается с конкретным портом на удалённом сервере (самим ssh-сервером или сервером, с которым у ssh-сервера прямая видимость) (в двух режимах: туда или обратно)
+динамический проброс позволяет отправлять обращения к произвольным портам произвольных IP
+
+SSH-клиент открывает локально на прослушивание заданный порт, который функционирует как SOCKS-прокси
+SSH-клиент перенаправляет все запросы, поступающие на этот порт, удалённому SSH-серверу
+SSH-сервер перенаправляет запросы в точки назначения, функционируя фактически как NAT (т.к. происходит замена IP отправителя на IP ssh-сервера)
+
+таким образом связка SSH-клиент + SSH-сервер позволяет обеспечить проксирование поверх защищённого канала, и не требуется установка доп. пакетов для запуска прокси-сервера
+
+https://www.opennet.ru/tips/info/1691.shtml
+https://linux.die.net/man/1/ssh
+
+#!/bin/bash
+ssh -D \*:11111 remoteuser@remoteserver -N
+
+-D - собственно, режим
+
+\* - запустить прослушивание на всех интерфейсах - небезопасно, т.к. нет аутентификации (по умолчанию только loopback) (\ - экранировать спецсимвол)
+
+-N - не запускать оболочку или какую-то команду на удалённом сервере, т.к. подключение нужно только для проброса портов
+
+Назад - linkto:SSH-туннелирование (проброс портов)
+linkto:Протокол SOCKS
+
+----- end note
+
+
+
+
+
+checksum:DA62EDBF6C4267711BA275C8FE72E2DA5AF4BB307CDBFFCC16DCD0B94D951FAE
 
 
 
