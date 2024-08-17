@@ -7,3 +7,10 @@
 # используется в mptkb.ps1 (опционально)
 
 $path2git = 'C:\PortableGit\cmd\git.exe'
+
+# автосохранение (чекпоинтинг) старого варианта базы
+# не чаще чем в указанный интервал времени (в минутах)
+# используется в mptkb.ps1
+
+$autosave_dir = 'D:\!MPTKB_checkpoints'
+$autosave_interval = 10

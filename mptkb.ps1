@@ -113,10 +113,10 @@ Get-Content -LiteralPath "$PSScriptRoot\config.txt" | Where-Object {$_ -like '$*
 
 #конец загрузки файла и парсинга
 
-#оставить?
 $antibonus = @{}
 $review_ts = @{}
 
+$last_checkpoint_file = $autosave_dir
 
 function Add-Node ($RootNode,$NodeName)
 {
@@ -514,6 +514,20 @@ $SaveButton_OnClick=
     #save changes
 
     $saving_t1 = get-date
+
+    #autosave - копируем предыдущее состояние файла перед этим сохранением в надёжное место
+    #если прошло autosave_interval минут с момента предыдущего чекпоинта
+
+    $last_checkpoint_ts = (Get-Item -LiteralPath $script:last_checkpoint_file).LastWriteTime
+
+    if(($saving_t1 - $last_checkpoint_ts).TotalMinutes -ge $script:autosave_interval)
+    {
+        $script:last_checkpoint_file = $script:autosave_dir + '\KB_' + $saving_t1.ToString("yyyy_MM_dd__HH.mm") + '.txt'
+        Copy-Item -LiteralPath $script:workfile -Destination $script:last_checkpoint_file -Force
+        Write-Host 'AUTOSAVE:' $script:last_checkpoint_file 'сохранён'
+    }
+
+    #autosave
 
     #синхронизируются изменения только в текущей заметке, поэтому уход с неё запрещён, пока не нажата кнопка сохранения...
 
