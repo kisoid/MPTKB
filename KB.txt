@@ -1010,8 +1010,6 @@ title:Семейство Linux
 
 timestamp:2021-11-26
 
-Семейство Linux
-
 Дистрибутиво-зависимое:
     * linkto:Ubuntu
     * linkto:Astra Linux
@@ -1029,6 +1027,8 @@ timestamp:2021-11-26
 
 linkto:Перфекционизм и Linux
 
+linkto:Инвентаризация в Linux
+
 Назад - linkto:nix
 
 На эту страницу ссылается - linkto:Бессознательное и Linux
@@ -1039,7 +1039,7 @@ linkto:Перфекционизм и Linux
 
 
 
-checksum:D01929972F52B8A356C27DB1A96576F0FE16B841A9E7938110A0B908F4973A66
+checksum:B84706B0E8B458161EF4CE185F5075ABCB818BED7EB940735420EC5D648AA39E
 
 
 
@@ -1323,10 +1323,9 @@ title:Сопровождение Ubuntu
 
 timestamp:2021-11-27
 
-Сопровождение Ubuntu
-
 linkto:Обновление Ubuntu с 16.04 до 20.04 (лог)
 linkto:Резервное копирование (бэкап_ backup) Ubuntu
+linkto:Инвентаризация в Linux
 
 Назад - linkto:Ubuntu
 На эту страницу ссылается - linkto:Автоматическое обновление Ubuntu
@@ -1337,7 +1336,7 @@ linkto:Резервное копирование (бэкап_ backup) Ubuntu
 
 
 
-checksum:C43D4D6DD77C72914B47B8AD5BD26C99467FA0DDB088BC1618E0AD51EA1E2842
+checksum:2D8B85C63586D11209ECE5000D7B79EADE5AF92E7FC0DD234181AA69A6C38A34
 
 
 
@@ -61787,8 +61786,6 @@ checksum:3FB496DADE242EF1CDB27A7AEEA83E920ABA521B5C90FC1D5877DB0A44D68257
 title:Виртуализация в Linux
 
 timestamp:2024-02-19
-
-Виртуализация в Linux
 #review:1
 
 linkto:KVM (Kernel-based Virtual Machine)
@@ -61796,6 +61793,7 @@ linkto:QEMU
 
 linkto:libvirt
 linkto:virsh
+linkto:Virtual Machine Manager (Linux)
 
 linkto#Proxmox VE
 
@@ -61811,7 +61809,7 @@ linkto:Виртуализация
 
 
 
-checksum:A668DF23CF5977F5FCB2B9E7A2A4179775AA7FAE85CA09C0DCCBEAA5AD927835
+checksum:2E362B976C1CD08A0F0CE36D585F8C02F343F235DC34BB054BDEE1E2FE198248
 
 
 
@@ -61966,6 +61964,7 @@ https://ivirt-it.ru/proxmox-ve-18-part-1/
 
 Назад - linkto:Виртуализация в Linux
 На эту страницу ссылается - linkto:virsh
+На эту страницу ссылается - linkto:Virtual Machine Manager (Linux)
 
 ----- end note
 
@@ -61973,7 +61972,7 @@ https://ivirt-it.ru/proxmox-ve-18-part-1/
 
 
 
-checksum:73C20BBFF619E28200F35ADE6D7A3B98ECCE875282AED7326B4788D7CCCB832F
+checksum:E8044F3C1F31533DF002EE7DDD909A1F2A7EB3B29C34CDD106506ECE81E893A3
 
 
 
@@ -68457,6 +68456,7 @@ linkto:Информационная безопасность Linux
 На эту страницу ссылается - linkto:Диагностика неполадок с помощью diff
 На эту страницу ссылается - linkto:Подсчёт хэш-сумм запущенных процессов в Linux
 На эту страницу ссылается - linkto:Ванденбринк - Linux для сетевых инженеров (2024)
+На эту страницу ссылается - linkto:Инвентаризация в Linux
 
 ----- end note
 
@@ -68464,7 +68464,7 @@ linkto:Информационная безопасность Linux
 
 
 
-checksum:F009D03CECB437DB2F196FB7DDC1F1123587518012B69C9A8C9BD80B765DD24E
+checksum:877A95BB40935885B4EB32851762C9229EE7DAF5A6AEB79595E12A43A2D7DD29
 
 
 
@@ -68680,16 +68680,17 @@ checksum:9C668F31D32572F1DF32B03B2C8A361F0DB985DCBA5F207799C16DCEBA0FB9A0
 ----- begin note
 
 title:Ванденбринк - Linux для сетевых инженеров (2024)
-#review:1
+#review:5
 #книга
 
 timestamp:2024-06-15
 
 F:\!!!!!!!!!!!!!!_all_books\!работа\!nix\Linux\VandenBrink Rob - Linux for Networking Professionals - 2021\(Библиотека программиста) Роб Ванденбринк - Linux для сетевых инженеров-Питер (2024).pdf
 
-остановился: 423
+остановился: типа закончил
 
 пропустил главы 6,7,11 (DNS, DHCP, перехват пакетов)
+(и возможно ещё какие-то в конце)
 
 linkto:Подсчёт хэш-сумм запущенных процессов в Linux
 linkto:osquery
@@ -68703,7 +68704,7 @@ linkto:HAProxy
 
 
 
-checksum:B173BFD37D7EDA78C1BF2E4404B2164197CF88377ADD5D0B14D428CCF25FC2B1
+checksum:5CE26E7037EED3A84F4643101150309B7CE86F5013CA36B3FD83CC580B4C509D
 
 
 
@@ -68773,7 +68774,7 @@ checksum:29AA23F76EC78ED8C098DDECEE8FFE005416BB328A1E32E67F400E6E3E50D0EB
 ----- begin note
 
 title:FreeRADIUS
-#review:1
+#review:5
 
 timestamp:2024-05-24
 
@@ -68788,7 +68789,7 @@ linkto:RADIUS
 
 
 
-checksum:74A72ECCBF3F3CD1A4EAC35463C1A3A6E3C9E29D8AB34730F42D9AD798D33BC6
+checksum:BD4336FFE9A9B4BEAED98DBE89A758B2738FE6EBF7683EC66DD7A9AF38118E2B
 
 
 
@@ -68797,7 +68798,7 @@ checksum:74A72ECCBF3F3CD1A4EAC35463C1A3A6E3C9E29D8AB34730F42D9AD798D33BC6
 ----- begin note
 
 title:HAProxy
-#review:1
+#review:5
 
 timestamp:2024-05-24
 
@@ -68812,7 +68813,7 @@ linkto:Распределение_балансировка нагрузки
 
 
 
-checksum:0171B9021FB0FAC4AA6187CA2BA9612F6F3BCAEDC21BA3E9ECED7E9B9AFDF604
+checksum:687862EBB4E6BD8D70FEAF4FC9BD16C8DDF9481B7A4E4EED589C0183A400A360
 
 
 
@@ -68874,7 +68875,7 @@ checksum:D54C84D3DF0BDA23AAA02C082A86A6CF35448F55BB86DB07DD5DEFB2133EFED0
 ----- begin note
 
 title:Образ Docker
-#review:1
+#review:2
 
 timestamp:2024-06-11
 
@@ -68906,7 +68907,7 @@ linkto:Слои образа Docker
 
 
 
-checksum:419BB09763F7214BB6969374C6DDC358DBE03DD0B70C5EAE96C78F3F0B2C0EFC
+checksum:97DF5FC24516B9DD9A3FF350A8487C1E2D82BE915A1CDDBC07E9DBEDBC2075DF
 
 
 
@@ -68992,7 +68993,7 @@ checksum:A2494A495653454DEF5509A530BC2CCB06E9DADFA75B5258B5AE3A500C19BE9A
 ----- begin note
 
 title:Слои образа Docker
-#review:1
+#review:2
 
 timestamp:2024-06-11
 
@@ -69034,7 +69035,7 @@ linkto:COW (copy-on-write)
 
 
 
-checksum:F458E47C064922FF96E078C608F16B0EAFD20EE23D34D512A0C06A736E0B1599
+checksum:E638EB5614724C28FC7FF3A7885E8B3C736A734AAD3877105745F9AE5D5D060B
 
 
 
@@ -69280,7 +69281,7 @@ checksum:7DCE60736A983DA561F61E118622E0EBC8063F9B35D5957C875B68AC7935CCF6
 ----- begin note
 
 title:Хранение контейнеров Docker
-#review:1
+#review:2
 
 timestamp:2024-06-15
 
@@ -69299,7 +69300,7 @@ linkto:Контейнер Docker
 
 
 
-checksum:AC1BA7D8F16A1ED99CAD58D3C29CA20CE0B882EC508F20C053785FA8C9D986AB
+checksum:5534DD0C9446424FC84234C997A78EB2128FB364320C26611D859D22F163594B
 
 
 
@@ -69345,7 +69346,7 @@ checksum:A5AFE0AE89A2481D89E17296DADB9AB76C965DFB1F52B313BFDB43BC9889DEBA
 title:Поддержка релизов Ubuntu
 #review:1
 
-timestamp:2024-06-15
+timestamp:2024-08-18
 
 с технической т.з. это выглядит так:
 1) есть некое ПО (напр, AbiWord)
@@ -69383,6 +69384,61 @@ http://archive.ubuntu.com/ubuntu/ubuntu/dists/lunar/
 тупить и обновляться/ставить доп. пакеты внутри обычного релиза - чуть больше года (интересно, когда удалят lunar?)
 затем, наверное, apt update будет возвращать либо ошибку, либо что всё "up to date" - проверить
 
+=== UPD 24.08.18 ===
+12 августа mantic (23.10) начал ругаться:
+"software updates are no longer provided for ubuntu 23.10. To stay secure, you should upgrade to Ubuntu 24.04 LTS"
+и
+"basic security maintenance Ended 07/11/2024 - extend or upgrade now"
+
+директории мантика пока на месте
+директории лунара тоже пока на месте...
+
+ub23dwnldr@ub23dwnldr:~$ sudo apt update
+Hit:1 http://security.ubuntu.com/ubuntu mantic-security InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu mantic InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu mantic-updates InRelease [127 kB]
+Hit:4 http://us.archive.ubuntu.com/ubuntu mantic-backports InRelease
+Fetched 127 kB in 1s (119 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+4 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+ub23dwnldr@ub23dwnldr:~$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following packages have been kept back:
+  grub-common grub-pc grub-pc-bin grub2-common
+0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+
+решил также попробовать поставить что-нибудь новое...
+
+ub23dwnldr@ub23dwnldr:~$ sudo apt install iptables-persistent
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  netfilter-persistent
+The following packages will be REMOVED:
+  ufw
+The following NEW packages will be installed:
+  iptables-persistent netfilter-persistent
+0 upgraded, 2 newly installed, 1 to remove and 4 not upgraded.
+Need to get 14.3 kB of archives.
+After this operation, 778 kB disk space will be freed.
+Do you want to continue? [Y/n] Y
+Get:1 http://us.archive.ubuntu.com/ubuntu mantic/universe amd64 netfilter-persistent all 1.0.20 [7,402 B]
+Get:2 http://us.archive.ubuntu.com/ubuntu mantic/universe amd64 iptables-persistent all 1.0.20 [6,946 B]
+Fetched 14.3 kB in 0s (32.9 kB/s)
+...
+ub23dwnldr@ub23dwnldr:~$
+
+пока всё норм...
+
+=== / UPD 24.08.18 ===
+
 #актвопрос
 можно ли перейти на другой релиз (do-release-upgrade) с обычного, если каталог обычного уже удалён? - проверить (дождаться, когда удалят mantic, либо откопать где-нибудь древний iso)
 linkto:Обновление Ubuntu с 16.04 до 20.04 (лог)
@@ -69397,7 +69453,7 @@ linkto:Эксперименты в тестовой среде
 
 
 
-checksum:2A189BE33F7A0E3FBD2D7BB2974328CCF4C6E5023F9C0950B709B616589FFCE6
+checksum:DA9828EE139485D3286AAC8D52C85B33F7D3247380228E9A82F3173EFB4C736E
 
 
 
@@ -69408,15 +69464,17 @@ checksum:2A189BE33F7A0E3FBD2D7BB2974328CCF4C6E5023F9C0950B709B616589FFCE6
 title:Версионирование пакетов Ubuntu
 #review:1
 
-timestamp:2024-06-15
+timestamp:2024-08-18
 
 подробности:
 https://serverfault.com/questions/604541/debian-packages-version-convention
  
 общая схема:
-upstream_version-debian_revision
+[epoch:]upstream_version-debian_revision
  
-где upstream_version - версия самого ПО от разработчиков
+где
+epoch - по умолч 1 (не пишется), инкрементится, если поменялась схема версионирования апстрима
+upstream_version - версия самого ПО от разработчиков
 debian_revision - версия билда, который сделал мэйнтейнер пакета дистрибутива
 linkto:Несовпадение циклов разработки софта и дистрибутивов
  
@@ -69440,7 +69498,7 @@ linkto:dpkg (Debian Ubuntu)
 
 
 
-checksum:8311E3A6A6BE698E12982F459455B82C36167AE258255B572F71DB15592669E3
+checksum:90435C77DDEFBD6BAE3311E24FFA564F011582DF93F9CF89DCB25ECF563FB4A7
 
 
 
@@ -69449,7 +69507,7 @@ checksum:8311E3A6A6BE698E12982F459455B82C36167AE258255B572F71DB15592669E3
 ----- begin note
 
 title:Несовпадение циклов разработки софта и дистрибутивов
-#review:1
+#review:2
 
 timestamp:2024-06-15
 
@@ -69482,7 +69540,7 @@ linkto:ад зависимостей
 
 
 
-checksum:2BAD11D7418C34772CD24C84C5C0BADD02319D852433D534E1EBFD51AF349346
+checksum:CE1A3911AA57AB9DAD5422CC7D00CE9EF5D1D83A95EA5A0BEB68E3D5D306E183
 
 
 
@@ -69491,7 +69549,7 @@ checksum:2BAD11D7418C34772CD24C84C5C0BADD02319D852433D534E1EBFD51AF349346
 ----- begin note
 
 title:Сосуществование разных версий пакетов в Linux
-#review:1
+#review:2
 
 timestamp:2024-06-15
 
@@ -69532,7 +69590,7 @@ linkto:ад зависимостей
 
 
 
-checksum:CA8349767615241B51B600FC4CEA8F98846FFE7E7638C3D325601EF02699DEC0
+checksum:EF1A8FDA0339BFC829D70E4018A04537440CC7BD3A41CB89AB2CDE259B2706B6
 
 
 
@@ -69541,7 +69599,7 @@ checksum:CA8349767615241B51B600FC4CEA8F98846FFE7E7638C3D325601EF02699DEC0
 ----- begin note
 
 title:Загрузка временных расширений (temporary extensions/add-ons) в Firefox
-#review:1
+#review:2
 
 timestamp:2024-06-21
 
@@ -69564,7 +69622,7 @@ linkto:Компонент YaMuTools
 
 
 
-checksum:5DB448CF8D68759ECD8F3BEDCB4237FEA1BCA195E2CF14A175550EF72A872FB7
+checksum:13528B6D877EEF11088304BFDF0BA67B0A62357D5150F0C1FC25DF08A0ED5E7F
 
 
 
@@ -69772,7 +69830,7 @@ checksum:F0993281A0B217FC32BFD3410BF4AC65B9EC0E2DB1703333F23B4EAD73F43113
 ----- begin note
 
 title:Подключение сырого (raw) диска в VirtualBox под Windows
-#review:1
+#review:2
 
 timestamp:2024-06-22
 
@@ -69800,7 +69858,7 @@ linkto:Утилита VBoxManage
 
 
 
-checksum:7121BD856C82A3F5515CD966B952CB1C5E20BCD6E61503DF84D10B45BB38490D
+checksum:934444DBCB26C0D96CEB0F63E5810E54AD06994B1448C7FD5ECADD4A21BEFB58
 
 
 
@@ -69861,7 +69919,7 @@ checksum:EB1EA76FBE92E04315FAF90C2D42F06F9DC55E54F20B6AA572E2B13D33108C5A
 ----- begin note
 
 title:MachineId (Linux)
-#review:1
+#review:2
 
 timestamp:2024-06-26
 
@@ -69889,7 +69947,7 @@ linkto:GUID (Globally Unique Identifier)_UUID (Universally Unique Identifier)
 
 
 
-checksum:82E50B7F2656239A2CD11399B47E775CB648EA821200ACD0BCA34FCE96D2E37D
+checksum:4A9AF794F2FDC3D8E980A42C9C5B47DE2487D35161739636AFA240CCABA561F9
 
 
 
@@ -69898,7 +69956,7 @@ checksum:82E50B7F2656239A2CD11399B47E775CB648EA821200ACD0BCA34FCE96D2E37D
 ----- begin note
 
 title:Фазированное (отложенное) развёртывание пакетов (apt)
-#review:1
+#review:2
 
 timestamp:2024-07-05
 
@@ -69923,7 +69981,7 @@ linkto:MachineId (Linux)
 
 
 
-checksum:BCE5959D15EBB43DDE74716C91387A32CDEBE97312031DB00D205B513BAC7DCD
+checksum:DB4B3AEBEF0664DF52A02325BCCC7ED581172798A35CABFC8DC33002F6CA0245
 
 
 
@@ -69947,6 +70005,8 @@ timestamp:2024-07-05
 
 это не страшно, т.к. с них можно снять "галку" man. inst. в случае необходимости
 
+linkto:Поиск manually installed packages в системе (Debian/Ubuntu)
+
 но правильным считается не писать лишних имён в apt install ...
 
 однако, если возникает необходимость сделать не apt upgrade (т.е. обновить всё, что обновляемо), а по шагам обновлять пакеты с помощью apt install и смотреть на реакцию системы (типа дебаг глючных обновлений), то сабжа становится слишком много
@@ -69962,7 +70022,7 @@ linkto:ад зависимостей
 
 
 
-checksum:40BDB8E24C557028F6734A5321B5B03FABC6E1782EC91FB6E987373A5ECD5A54
+checksum:73AA2BCCDDE4B59DABAB35D56243F0F8D708376B14BD4D3A87D1D942465B3D2A
 
 
 
@@ -70158,7 +70218,7 @@ checksum:6A484F3739960192238716BD43974817C5BAE9B8BF9DF6335634E2E5EEFA2F19
 ----- begin note
 
 title:Утилита e2fsck (Linux)
-#review:1
+#review:2
 
 timestamp:2024-07-06
 
@@ -70190,7 +70250,7 @@ linkto:Разрушение информации
 
 
 
-checksum:AA8D9A65690281F5CEC48D0242E2456125E05D5B72473C438645639E46158E5A
+checksum:487CB83FF31CBC0FA0654BFD6DFD8037B60B824B6074CDC267FC1670A6C4E2AC
 
 
 
@@ -70199,7 +70259,7 @@ checksum:AA8D9A65690281F5CEC48D0242E2456125E05D5B72473C438645639E46158E5A
 ----- begin note
 
 title:Создание программного моста на Linux
-#review:1
+#review:2
 
 timestamp:2024-07-06
 
@@ -70209,6 +70269,9 @@ http://xgu.ru/wiki/man:brctl
 ничего особо интересного в этой утилите
 является частью пакета bridge-utils
 
+libvirtd, насколько я понял, создаёт мосты самостоятельно как-то через ядро
+в пакете Bridge Utils не нуждается
+
 Назад - linkto:Мост (Bridge) программный
 
 ----- end note
@@ -70217,7 +70280,7 @@ http://xgu.ru/wiki/man:brctl
 
 
 
-checksum:0EB5AB1A4BF0FE42DDC21072AA38363CE1023AC97F86687B6BDEDFAAD29A8C64
+checksum:2D429264F124CD06C5028C01B831C8AE4B543456CCEEA6A61CE58DDD0047FD0F
 
 
 
@@ -70253,7 +70316,7 @@ checksum:7657C935201EBE4322448566E3AA7DD245B6CE29EFF86B59A427E2C7AA870A33
 ----- begin note
 
 title:Протокол SOCKS
-#review:1
+#review:2
 
 timestamp:2024-08-11
 
@@ -70268,7 +70331,7 @@ linkto:Динамический проброс портов с помощью SS
 
 
 
-checksum:B6972A395A87B1BE4B64943BE582E1D090FFA39B0898C9AD453F6B1BFF2E6ACA
+checksum:5521E52A296885C614CBFCB5A93E3BE9E772EF31CB754DBBA80523BFB9A423DC
 
 
 
@@ -70414,7 +70477,7 @@ checksum:C5412AB90AD349144A38A319F971512A1794613C25C82594A6776DAA04F501BD
 ----- begin note
 
 title:Алан Тьюринг
-#review:1
+#review:2
 
 timestamp:2024-08-16
 
@@ -70427,7 +70490,7 @@ linkto:Машина Тьюринга
 
 
 
-checksum:2C0781B048B970FA3D01305F6B4FC7487C415E16918E5AFCA545BD99706D3939
+checksum:ED018F4C9C544AB337E8F1B9531B9AEFE0402ADBBBB19B005106A1A140D7F955
 
 
 
@@ -70455,6 +70518,109 @@ linkto:Компьютерные игры
 
 
 checksum:27A84E8E128FE3D7738A3F5163B60FC1BC585F6A0988CEE279B601FC678EB36B
+
+
+
+
+
+----- begin note
+
+title:Virtual Machine Manager (Linux)
+#review:1
+
+timestamp:2024-08-18
+
+не путать с Microsoft System Center Virtual Machine Manager (VMM)
+
+графическое приложение, похоже на оснастку Hyper-V Manager
+
+работает поверх
+linkto:libvirt
+
+позволяет управлять гипервизорами/ВМ на удалённых серверах по ssh
+на этих серверах GUI не требуется
+таким образом, можно держать одну управляющую/административную машину с установленными иксами, а на серверах ничего не ставить, уменьшая нагрузку, поверхность атаки и кол-во требуемых обновлений
+
+#todo
+минимальный список пакетов для установки гипервизора без gui
+
+Назад - linkto:Виртуализация в Linux
+
+----- end note
+
+
+
+
+
+checksum:97C62DCE6E99E6C832EC1DF91D2DEBC09B7E41F2C1E6BB2704AA58C4AE4E1BA6
+
+
+
+
+
+----- begin note
+
+title:Поиск manually installed packages в системе (Debian/Ubuntu)
+#review:1
+
+timestamp:2024-08-18
+
+apt list --manual-installed
+apt list --manual-installed=true
+однако выдаёт не только те пакеты, которые ставил Я, но и те, что установлены инсталлятором ОС
+
+apt-mark showmanual
+тоже
+
+от знатока:
+( zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep '^Commandline:' | egrep 'install'
+
+мой вариант:
+( zcat $( ls -tr /var/log/apt/history.log*.gz ) ; cat /var/log/apt/history.log ) | grep '^Commandline:' | grep -v 'oDebug' | grep -v '\-\-quiet'| grep -v '\-\-fix-policy' | grep 'install'
+
+разбор команды:
+1) с помощью ls -tr получаем список файлов по дате от самого старого до самого нового
+2) отправляем список в качестве аргумента в zcat
+3) снизу ещё присобачиваем обычный history.log (несжатый), как самый свежий
+4) всё это хозяйство грепаем сначала, чтобы получить список строчек "Commandline:..."
+5) затем из него выкидывается (-v) то, что понаставил инсталлятор
+6) в конце оставляем только install (т.к. есть ещё upgrade, remove, autoremove и прочие команды)
+
+Назад - linkto:manually installed packages (apt)
+На эту страницу ссылается - linkto:Инвентаризация в Linux
+
+----- end note
+
+
+
+
+
+checksum:9AEBBDFC05F70CC68785A08AB3052BEA097BBCEF01D9B09DD8306C2264AFB336
+
+
+
+
+
+----- begin note
+
+title:Инвентаризация в Linux
+#review:1
+
+timestamp:2024-08-18
+
+linkto:osquery
+linkto:Поиск manually installed packages в системе (Debian/Ubuntu)
+
+Назад - linkto:Семейство Linux
+На эту страницу ссылается - linkto:Сопровождение Ubuntu
+
+----- end note
+
+
+
+
+
+checksum:2FFC12C398012FED02D8C8CA94093017559FB1F58E76CC1566C201A93FFC509A
 
 
 
