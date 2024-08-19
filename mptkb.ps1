@@ -239,6 +239,26 @@ function Review-Next
 }
 
 
+function AutoSave
+{
+    #autosave - копируем текущий сохранённый файл в надёжное место
+    #если прошло autosave_interval минут с момента предыдущего чекпоинта
+
+    $now = Get-Date
+
+    $last_autosave_ts = (Get-Item -LiteralPath $script:autosave_dir).LastWriteTime
+    $last_checkpoint_ts = (Get-Item -LiteralPath $script:last_checkpoint_file).LastWriteTime
+    $workfile_ts = (Get-Item -LiteralPath $script:workfile).LastWriteTime
+
+    if((($now - $last_autosave_ts).TotalMinutes -ge $script:autosave_interval) -and ($workfile_ts -gt $last_checkpoint_ts))
+    {
+        $script:last_checkpoint_file = $script:autosave_dir + '\KB_' + $now.ToString("yyyy_MM_dd__HH.mm") + '.txt'
+        Copy-Item -LiteralPath $script:workfile -Destination $script:last_checkpoint_file -Force
+        Write-Host 'AUTOSAVE:' $script:last_checkpoint_file 'сохранён'
+    }
+}
+
+
 #Generated Form Function
 function GenerateForm {
 ########################################################################
@@ -299,6 +319,8 @@ $ReviewButton_OnClick=
     Write-Host '----- Review ------------------------------------------------------'
     Review-Next
     Write-Host '-------------------------------------------------------------------'
+    
+    AutoSave
 }
 
 $RecentButton_OnClick= 
@@ -507,6 +529,8 @@ $GitPushButton_OnClick=
     Start-Sleep -Seconds 3
 
     Write-Host '-------------------------------------------------------------------'
+    
+    AutoSave
 }
 
 $SaveButton_OnClick= 
@@ -515,19 +539,7 @@ $SaveButton_OnClick=
 
     $saving_t1 = get-date
 
-    #autosave - копируем предыдущее состояние файла перед этим сохранением в надёжное место
-    #если прошло autosave_interval минут с момента предыдущего чекпоинта
-
-    $last_checkpoint_ts = (Get-Item -LiteralPath $script:last_checkpoint_file).LastWriteTime
-
-    if(($saving_t1 - $last_checkpoint_ts).TotalMinutes -ge $script:autosave_interval)
-    {
-        $script:last_checkpoint_file = $script:autosave_dir + '\KB_' + $saving_t1.ToString("yyyy_MM_dd__HH.mm") + '.txt'
-        Copy-Item -LiteralPath $script:workfile -Destination $script:last_checkpoint_file -Force
-        Write-Host 'AUTOSAVE:' $script:last_checkpoint_file 'сохранён'
-    }
-
-    #autosave
+    #AutoSave #решил перенести в конец
 
     #синхронизируются изменения только в текущей заметке, поэтому уход с неё запрещён, пока не нажата кнопка сохранения...
 
@@ -594,6 +606,8 @@ $SaveButton_OnClick=
 
     $saving_t2 = get-date
     Write-Host "Сохранение (сек): " + ($saving_t2 - $saving_t1).TotalSeconds
+
+    AutoSave
 }
 
 $SearchButton_OnClick= 
@@ -692,6 +706,8 @@ $GoToPageButton_OnClick=
         $script:changed_notes.Add($script:last_oid)
         GoToPage $script:last_oid
     }
+
+    AutoSave
 }
 
 $JumpPageButton_OnClick= 
@@ -700,6 +716,8 @@ $JumpPageButton_OnClick=
     $selected_link = ($script:note_title | Out-GridView -OutputMode Single)
     Write-Host "Jump to existing" $selected_link.Value
     GoToPage $selected_link.Name
+
+    AutoSave
 }
 
 $OnLoadForm_StateCorrection=
@@ -986,6 +1004,8 @@ $form1.add_Load($OnLoadForm_StateCorrection)
 #Show the Form
 
 GoToPage $script:last_oid
+
+AutoSave
 
 $form1.ShowDialog()| Out-Null
 
